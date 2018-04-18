@@ -15,7 +15,9 @@ Valid & Invalid variable names
 A variable is initialized (or created) the first time a value is stored in it. After that, you can use it in expressions with other variables and values.When a variable is assigned a new value w, the old value is forgotten, which is why spam evaluated to 42 instead of 40 at the end of the example. This is called overwriting the variable.
  
 ### Your first Python Program:
+
 # This program says hello and asks for my name.
+
 ```python
 print('Hello world!')
 print('What is your name?')    # ask for their name
@@ -28,14 +30,17 @@ myAge = input()
 print('You will be ' + str(int(myAge) + 1) + ' in a year.')
 ```
 
-Comments
-# Single Line Comment
+### Comments
+
+#### Single Line Comment
 ‘’’
-Multi Line Comments
+
+#### Multi Line Comments
 ‘’’
  
-Typecasting and different datatypes
+### Typecasting and different datatypes
 Int(), Str(), Float()
+```
 >>> str(0)
 '0'
 >>> str(-3.14)
@@ -52,16 +57,19 @@ Int(), Str(), Float()
 3.14
 >>> float(10)
 10.0
-Chapter 2: Flow Control
+```
+## Chapter 2: Flow Control
+
 Flow control statements can decide which Python instructions to execute under which conditions.
  
 In a flowchart, there is usually more than one way to go from the start to the end. The same is true for lines of code in a computer program. Flow-charts represent these branching points with diamonds, while the other steps are represented with rectangles. The starting and ending steps are represented with rounded rectangles.
 
-Boolean Values: Return a True or False
+### Boolean Values: Return a True or False
 Assigning True or False to a variable makes it a Boolean variable. 
 Comparison Operators
  
 These operators evaluate to True or False depending on the values you give them.
+```
 >>> 42 == 42
 True
 >>> 42 == 99
@@ -70,9 +78,13 @@ False
 True
 >>> 2 != 2
 False
+```
 Note the difference between == and =, one makes a comparison to checks if one number is equal to the other. Whereas the other assigns a value to a variable. 
+
 Binary Boolean Operators make use of ‘and’, ‘or’ and ‘not’
+
 Examples: And: only evaluates to true if both comparison values are the same
+```
 >> True and False
 False
 >> True and True
@@ -81,8 +93,12 @@ True
 False
 >> False and True
 False
+```
 
-Examples: Or: only evaluates to true for either or both
+## Examples: 
+
+### Or: only evaluates to true for either or both
+```
 >> False or True
 True
 >> False or False
@@ -95,30 +111,34 @@ True
 True
 >> False or False
 False
-
-Not Operator: Negates the following variable (note the outcome is Boolean)
+```
+### Not Operator: Negates the following variable (note the outcome is Boolean)
+```
 >> not True
 False
 >> not not not not True
 True
+```
 
-Mixing comparison operators with boolean
+### Mixing comparison operators with boolean
+```
 >> (4 < 5) and (5 < 6)
 True
 >> (1 == 2 ) or (2 == 2)
 True 
-
-If/Else/Elif statements:
-
+```
+### If/Else/Elif statements:
+```
 if name == 'Alice':
     print('Hi, Alice.')
 elif age < 12:
     print('You are not Alice, kiddo.')
 else:
     print(“You’re not Alice nor a kid”)
+```
 
-While statements:
-
+### While statements:
+```
 spam = 0
 if spam < 5:
     print('Hello, world.')
@@ -136,8 +156,10 @@ while True:
      if name == 'your name':
          break
  print('Thank you!')
+```
 
-Using Booleans to evaluate a Loop:
+### Using Booleans to evaluate a Loop:
+```python
 # Boolean values in Loops
 
 name = ''
@@ -156,13 +178,16 @@ if numOfGuests: # i.e. if numOfGuests is a non blank input, else exits
 print('Done')
 For Loops using the range function:
 for i in range(5):
-	print("Indedx is = " + str(i))
+	print("Index is = " + str(i))
+```
+```
+Index is = 0
+Index is = 1
+Index is = 2
+Index is = 3
+Index is = 4
+```
 
-Indedx is = 0
-Indedx is = 1
-Indedx is = 2
-Indedx is = 3
-Indedx is = 4
 Note the index I starts at 0 and goes up to range-1.
 Karl Frederich Gauss Example:
 Ask to add up all numbers up to 100. He broke them down into pairs, finding 50 pairs that sum to 100 and one pair summing to 50. 
