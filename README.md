@@ -187,12 +187,15 @@ Index is = 2
 Index is = 3
 Index is = 4
 ```
-
 Note the index I starts at 0 and goes up to range-1.
-Karl Frederich Gauss Example:
-Ask to add up all numbers up to 100. He broke them down into pairs, finding 50 pairs that sum to 100 and one pair summing to 50. 
+
+### Karl Frederich Gauss Example:
+
+Was asked to add up all numbers up to 100. He broke them down into pairs, finding 50 pairs that sum to 100 and one pair summing to 50. 
 These were, SUM(1:100) = 99 + 1, 98 + 2, 97 + 3, …., 51 + 49, 50. I.e. 50 pairs add up to 100 then +50 = 5,050. 
 With Python 3, this looks like:
+
+```python
  total = 0
  for num in range(101):
      total = total + num
@@ -220,10 +223,13 @@ for i in range(5, -1, -1):
 2
 1
 0
-Importing Modules:
+```
+### Importing Modules:
 
 Each module is a Python program that contains a related group of functions that can be embedded in your programs. For example, the math module has mathematics related functions, the random module has random number related functions, and so on.
-# The Random Function
+
+## The Random Function
+```python
 import random
 for i in range(5):
     print(random.randint(1,10)) 
@@ -231,37 +237,53 @@ for i in range(5):
 randint belongs to Random module, called using the dot function.
 Rnadint requires a start and finish number to determine the range
 ‘’’
-Importing multiple modules on a single line
+# Importing multiple modules on a single line
 import random, sys, os, math	
 from import Statements
+```
 An alternative form of the import statement is composed of the from keyword, followed by the module name, the import keyword, and a star; for example, from random import *.
 With this form of import statement, calls to functions in random will not need the random. prefix. However, using the full name makes for more readable code, so it is better to use the normal form of the import statement.
 ending a Program early with sys.exit()
+
 However, you can cause the program to terminate, or exit, by calling the sys.exit() function. Since this function is in the sys module, you have to import sys before your program can use it.
+
 By using expressions that evaluate to True or False (also called conditions), you can write programs that make decisions on what code to execute and what code to skip. You can also execute code over and over again in a loop while a certain condition evaluates to True. The break and continue statements are useful if you need to exit a loop or jump back to the start. These flow control statements will let you write much more intelligent programs. There’s another type of flow control that you can achieve by writing your own functions, which is the topic of the next chapter.
-Chapter 3: Functions
+
+
+## Chapter 3: Functions
 You’re already familiar with the print(), input(), and len() functions from the previous chapters. Python provides several built-in functions like these, but you can also write your own functions. A function is like a mini- program within a program.
 A major purpose of functions is to group code that gets executed multiple times. Without a function defined, you would have to copy and paste this code each time. The benefits are when making changes, only a single change needs to be made within a function that’s used many times. 
 A simple example with Functions:
+```python
 def hello():
     print('Howdy!')
     print('Howdy!!!')
     print('Hello there.')
 hello()
+```
+
 The first line is a def statement u, which defines a function named hello(). The code in the block that follows the def statement v is the body of the function. This code is executed when the function is called, not when the function is first defined.
 Functions require a definition that when called will perform a certain action. It can further take in arguments to be passed by value (the value is only passed on, not the actual variable) and then pass values back. 
+```python
 def hello(name):
     print('Hello ' + name)
 hello('Alice')
 hello('Bob')
+```
 Refer to the magic 8 ball program. Here we have multiple if else statements to signify flow control based on a random number to assign an outcome. 
+
 The None value datatype: 
 Represents the absence of a value. In other programming languages this is named null, nil or undefined. This is similar to a Boolean value and must start with a capital letter. 
+
 When printed – the value None is displayed to the screen.
+
 This value-without-a-value can be helpful when you need to store something that won’t be confused for a real value in a variable. One place where None is used is as the return value of print(). The print() function displays text on the screen, but it doesn’t need to return anything in the same way len() or input() does.
+
 NB: None is the return value of a function that doesn’t return anything. It’s also a good storage value for variables that will be assigned real values like integers or characters. 
+
 Multi-line arguments with the print function
-# Multiline arguments and print()
+
+### Multiline arguments and print()
 print('Hello', end= ' ')
 print('World')
 is the same as: 
@@ -270,9 +292,10 @@ or we could even do;
 >>> print('cats', 'dogs', 'mice')
 cats dogs mice
 we can use the separate function to add a separator between what we print.
->>> print('cats', 'dogs', 'mice', sep=', ')
+>>> print('cats', 'dogs', 'mice', sep = ', ')
 cats, dogs, mice
-Local and Global Variables
+
+### Local and Global Variables
 Parameters and variables that are assigned in a called function are said to exist in that function’s local scope. Variables that are assigned outside all functions are said to exist in the global scope.
 After a function is called and a value it’s purpose completed, the local variable is destroyed. It cannot be accessed outside the function, unless returned back.
 To typecast a local variable to a global variable use the global statement.
