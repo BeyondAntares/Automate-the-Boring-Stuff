@@ -40,7 +40,7 @@ print('You will be ' + str(int(myAge) + 1) + ' in a year.')
  
 ### Typecasting and different datatypes
 Int(), Str(), Float()
-```
+```python
 >>> str(0)
 '0'
 >>> str(-3.14)
@@ -69,7 +69,7 @@ Assigning True or False to a variable makes it a Boolean variable.
 Comparison Operators
  
 These operators evaluate to True or False depending on the values you give them.
-```
+```python
 >>> 42 == 42
 True
 >>> 42 == 99
@@ -84,7 +84,7 @@ Note the difference between == and =, one makes a comparison to checks if one nu
 Binary Boolean Operators make use of ‘and’, ‘or’ and ‘not’
 
 Examples: And: only evaluates to true if both comparison values are the same
-```
+```python
 >> True and False
 False
 >> True and True
@@ -98,7 +98,7 @@ False
 ## Examples: 
 
 ### Or: only evaluates to true for either or both
-```
+```python
 >> False or True
 True
 >> False or False
@@ -113,7 +113,7 @@ True
 False
 ```
 ### Not Operator: Negates the following variable (note the outcome is Boolean)
-```
+```python
 >> not True
 False
 >> not not not not True
@@ -121,14 +121,14 @@ True
 ```
 
 ### Mixing comparison operators with boolean
-```
+```python
 >> (4 < 5) and (5 < 6)
 True
 >> (1 == 2 ) or (2 == 2)
 True 
 ```
 ### If/Else/Elif statements:
-```
+```python
 if name == 'Alice':
     print('Hi, Alice.')
 elif age < 12:
@@ -138,7 +138,7 @@ else:
 ```
 
 ### While statements:
-```
+```python
 spam = 0
 if spam < 5:
     print('Hello, world.')
@@ -180,7 +180,7 @@ For Loops using the range function:
 for i in range(5):
 	print("Index is = " + str(i))
 ```
-```
+```python
 Index is = 0
 Index is = 1
 Index is = 2
