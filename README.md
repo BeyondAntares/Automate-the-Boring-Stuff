@@ -356,17 +356,22 @@ Lists can also contain other list values. The values in these lists of lists can
 'bat'
 >>> spam[1][4]
 50
-Negative Indexes
+### Negative Indexes
 While indexes start at 0 and go up, you can also use negative integers for the index. The integer value -1 refers to the last index in a list, the value -2 refers to the second-to-last index in a list, and so on. Enter the following into the interactive shell:
+```python
 >>> spam = ['cat', 'bat', 'rat', 'elephant']
 >>> spam[-1]
 'elephant'
 >>> spam[-3]
 'bat'
 >>> 'The ' + spam[-1] + ' is afraid of the ' + spam[-3] + '.'
+```
+```
 'The elephant is afraid of the bat.'	
-Slices from a list, using the colon:
+```
+### Slices from a list, using the colon:
 As a shortcut, you can leave out one or both of the indexes on either side of the colon in the slice. Leaving out the first index is the same as using 0, or the beginning of the list. Leaving out the second index is the same as using the length of the list, which will slice to the end of the list. Enter the following into the interactive shell:
+```python
 >>> spam = ['cat', 'bat', 'rat', 'elephant']
 >>> spam[0:4]
 ['cat', 'bat', 'rat', 'elephant']
@@ -374,19 +379,25 @@ As a shortcut, you can leave out one or both of the indexes on either side of th
 ['bat', 'rat']
 >>> spam[0:-1]
 ['cat', 'bat', 'rat']
+```
 The first index dictates which list to use, and the second indicates ghe value within the list value. For example, spam[0][1] prints 'bat', the second value in the first list. If you only use one index, the program will print the full list value at that index.
 Note we can access values from the back using negative indices. 
 We count the number of values in a list using len. Note if we have a list that includes multiple sub lists, it will return the number of sub-lists it contains. 
+```python
 Spam = [[‘cat’, ’rat’, ‘bat’] , [10,20,30,40,50]]
 Len(spam) = 2
 Len(spam[0]) = 3
 Lem(spam[1]) = 5
-Changing Values in a List with Indexes:
+```
+### Changing Values in a List with Indexes:
+```python
 >>> spam[0][0] = 'aardvark'
 >>> spam
 [['aardvark', 'bat', 'rat'], [10, 20, 30, 40, 50]]
-List Concatenation and List Replication
+```
+### List Concatenation and List Replication
 The + operator can combine two lists to create a new list value in the same way it combines two strings into a new string value. The * operator can also be used with a list and an integer value to replicate the list. Enter the following into the interactive shell:
+```python
 >>> [1, 2, 3] + ['A', 'B', 'C']
 [1, 2, 3, 'A', 'B', 'C']
 >>> ['X', 'Y', 'Z'] * 3
@@ -395,8 +406,9 @@ The + operator can combine two lists to create a new list value in the same way 
 >>> spam = spam + ['A', 'B', 'C']
 >>> spam
 [1, 2, 3, 'A', 'B', 'C']
-Cat Names example:
-
+```
+### Cat Names example:
+```python
 # Cat names
 # Have the user enter several cat names, store it into a list and print them.
 catNames = [] # Empty List
@@ -417,24 +429,31 @@ for i in range(4):
 and
 for i in [0, 1, 2, 3]:  # This data type is called a sequence
     print(i)
+```
 Gives the following output: 
+```
 0
 1
 2
 3
-
+```
 When we don’t know how long a list will be, we can use len(range(list)) like the following:
+```python
 >>> supplies = ['pens', 'staplers', 'flame-throwers', 'binders']
 >>> for i in range(len(supplies)):
     print('Index ' + str(i) + ' in supplies is: ' + supplies[i])
-
+```
+```
 Index 0 in supplies is: pens
 Index 1 in supplies is: staplers
 Index 2 in supplies is: flame-throwers
 Index 3 in supplies is: binders
-The in and not in Operators
+```
+### The in and not in Operators
 You can determine whether a value is or isn’t in a list with the in and not in operators. These expressions will evaluate to a Boolean value. 
+
 Example:
+```python
 >>> foo = ['hi','hello','howdy','heya']
 >>> 'howdy' in foo
 True
@@ -448,8 +467,11 @@ if name not in myPets:
     print('I do not have a pet named ' + name)
 else:
     print('Yes ' + name + ' is my pet.')
-The Multiple Assignment Trick
+```
+
+### The Multiple Assignment Trick
 The multiple assignment trick is a shortcut that lets you assign multiple variables with the values in a list in one line of code. The following is the same:
+```python
 >>> cat = ['fat', 'black', 'loud']
 >>> size = cat[0]
 >>> color = cat[1]
@@ -457,6 +479,7 @@ The multiple assignment trick is a shortcut that lets you assign multiple variab
 Is the same as:
 >>> cat = ['fat', 'black', 'loud']
 >>> size, color, disposition = cat
+```
 The number of variables and the length of the list must be exactly equal, or a ValueError occurs:
 Augmented Assignment operators: 
 
@@ -467,51 +490,66 @@ Value = Value * 1:   *=1
 Value = Value / 1:  /= 1
 Value = Value % 1: %= 1
 These operators can be used for string concatenation and replication. 
+```python
 >> Spam = ‘Hello’
 >> Spam =+ ‘ World’
 >> Spam 
 ‘Hello World’
-String repetition 
+```
+### String repetition 
 Bacon = [‘Zophie’]
-Bacom *= 3
+Bacon *= 3
 Bacon 
 [‘Zophie’,’Zophie’,’Zophie’]
-Methods:
+
+### Methods:
 A method is the same thing as a function, except it is “called on” a value, using the ‘.’ dot notation. 
 Each data type has it’s own set of methods().
+
 For example: spam.index(‘Hello’) will return the index value where ‘hello’ is stored within spam. If the value doesn’t exist, a ValueError will be passed back. If duplicates are found in the list, then the first instance of the value index will be returned. Same goes for remove, the first instance of the value will be removed. 
 List methods using append(), insert() and remove() methods.
+
 The previous append() method call adds the argument to the end of the list.
+```python
 >>> spam = ['cat', 'dog', 'bat']
 >>> spam.append('moose')
 >>> spam
 ['cat', 'dog', 'bat', 'moose']
+```
 The insert() method can insert a value at any index in the list. The first argument to insert() is the index for the new value, and the second argument is the new value to be inserted. Note methods don’t have a return value.
+```python
 >>> spam = ['cat', 'dog', 'bat']
 >>> spam.insert(1, 'chicken')
 >>> spam
 ['cat', 'chicken', 'dog', 'bat']
-Remove:
+```
+### Remove:
+```python
 >>> spam = ['cat', 'bat', 'rat', 'elephant']
 >>> spam.remove('bat')
 >>> spam
 ['cat', 'rat', 'elephant']
+```
 •	Removing a value that doesn’t exists returns a ValueError.
 •	These methods are only applicable to lists. They are modified in place and don’t need assignment or return values. 
 •	If we tried them on strings or integers we would receive an attribute error. 
 •	When you know the index, use del(). If you only know the value, use remove()
 •	Sort a list using .sort()
-Sort() in action:
+
+### Sort() in action:
+```python
 numList = [11,4,3.3417,15,-7,-21,0,42,3,9,5,7,4,2,3,6]
 >>> numList.sort()
 >>> numList
 [-21, -7, 0, 2, 3, 3, 3.3417, 4, 4, 5, 6, 7, 9, 11, 15, 42]
->>> animalList=['antelop','anteater','aardvark','armadillo','anaconda','albatross', 'alligator']
+>>> animalList=['antelope','anteater','aardvark','armadillo','anaconda','albatross', 'alligator']
 >>> animalList.sort()
 >>> animalList
-['aardvark', 'albatross', 'alligator', 'anaconda', 'anteater', 'antelop', 'armadillo']
+['aardvark', 'albatross', 'alligator', 'anaconda', 'anteater', 'antelope', 'armadillo']
+```
 Note – Items in capitals will supersede lowercase letters
 Sort in reverse: 
+```python
 >>> spam.sort(reverse=True)
 >>> spam
 ['elephants', 'dogs', 'cats', 'badgers', 'ants']
@@ -524,8 +562,9 @@ Creating unique list items: Sets
 >>> s = [1, 2, 3]
 >>> list(set(t) - set(s))
 [8, 5, 6, 7]
-
-Examples:
+```
+### Examples:
+```python
 >>> sample = ['bat','cat','antelope','aardvark','cougar','puma','racoon']
 >>> sample.append('moose')
 >>> sample
@@ -543,13 +582,18 @@ Examples:
 >>> sample.sort(reverse = True)
 >>> sample
 ['racoon', 'puma', 'moose', 'cougar', 'chicken', 'cat', 'bat', 'antelope', 'aardvark']
+```
 Notes about sort:
 •	Sort cannot differentiate between numbers and letters
 •	Sort ‘sorts’ numbers in ASCIIbetical order so capitals come before short hand. 
+
 Indentation, makes lists look nicer, how to extend on multiple lines
 You can also split up a single instruction across multiple lines using the \ line continuation character at the end . Think of \ as saying, “This instruction continues on the next line .” The indentation on the line after a \ line continuation is not significant . For example, the following is valid Python code:
+```python
 print('Four score and seven ' + \
       'years ago...')
+```
+```python
 # Magic 8 Ball with Lists
 
 import random
@@ -565,8 +609,9 @@ messages =[
     'Outlook not so good',
     'Very Doubtful']
 print(messages[random.randint(0, len(messages)-1)])
-
-Low level string manipulation
+```
+### Low level string manipulation
+```python
 >>> name = 'Zophie'
 >>> name[0]
 'Z'
@@ -582,19 +627,21 @@ False
 False
 >>> for i in name:
         print('* * * ' + i + ' * * *')
-
-Mutable and Immutable Data Types
+```
+### Mutable and Immutable Data Types
 But lists and strings are different in an important way. A list value is a mutable data type: It can have values added, removed, or changed. However, a string is immutable: It cannot be changed. Trying to reassign a single character in a string results in a TypeError error.
 The proper way to “mutate” a string is to use slicing and concatenation to build a new string by copying from parts of the old string. Enter the following into the interactive shell:
+```python
 >>> name = 'Zophie a cat'
 >>> newName = name[0:7] + 'the' + name[8:12]
 >>> name
 'Zophie a cat'
 >>> newName
 'Zophie the cat'
- 
-The Tuple Data Type
+```
+### The Tuple Data Type
 The tuple data type is almost identical to the list data type, except in two ways. First, tuples are typed with parentheses, ( and ), instead of square brackets, [ and ]. For example, enter the following into the interactive shell:
+```python
 >>> eggs = ('hello', 42, 0.5)
 >>> eggs[0]
 'hello'
@@ -602,9 +649,11 @@ The tuple data type is almost identical to the list data type, except in two way
 (42, 0.5)
 >>> len(eggs)
 3
+```
 But the main way that tuples are different from lists is that tuples, like strings, are immutable. Tuples cannot have their values modified, appended, or removed. 
 If you have only one value in your tuple, you can indicate this by placing a trailing comma after the value inside the parentheses. Otherwise, Python will think you’ve just typed a value inside regular parentheses.
 You can use tuples to convey to anyone reading your code that you don’t intend for that sequence of values to change. If you need an ordered sequence of values that never changes, use a tuple. A second benefit of using tuples instead of lists is that, because they are immutable and their contents don’t change, Python can implement some optimizations that make code using tuples slightly faster than code using lists.
+```python
 >>> type(('hello',))
 <class 'tuple'>
 >>> type(('hello'))
@@ -626,9 +675,11 @@ When we reassign values to a variable, the variable stores the latest value. How
 [0, 'Hello!', 2, 3, 4, 5]
 >>> cheese
 [0, 'Hello!', 2, 3, 4, 5]
-
+```
 Looking at the above, we see both variables Spam and Cheese have been changed. Why did this happen? When we reassign variables to lists, we actually pass a reference to the original list. Therefore any changes we apply to the variable – will refer to that one list and make relative changes. 
+
 When you create the list u, you assign a reference to it in the spam variable. But the next line v copies only the list reference in spam to cheese, not the list value itself. This means the values stored in spam and cheese now both refer to the same list. There is only one underlying list because the list itself was never actually copied. So when you modify the first element of cheese, you are modifying the same list that spam refers to.
-Chapter 5: Dictionaries and Structuring data
-Chapter 6: String Manipulation
+
+## chapter 5: Dictionaries and Structuring data
+## chapter 6: String Manipulation
 
